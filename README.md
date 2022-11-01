@@ -2,7 +2,7 @@
 Zadatak iz 1. labosa iz kolegija OR.
 
 ## About:<br />
-• All data in database is stored in english.<br />
+>• All data in database is stored in english.<br />
 • There are 2 tables in the database:<br />
   • Orders<br />
     attributes: name, common_name, wings, total_species, total_families, metamorphosis<br />
