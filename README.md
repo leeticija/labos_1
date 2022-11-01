@@ -10,7 +10,7 @@ Zadatak iz 1. labosa iz kolegija OR.
     attributes: genus, specie, binomial_name, order_id(which order does the insect belong to)<br />
 
 ## License:<br />
-• CC BY-NC: This license allows reusers to distribute, remix, 
+>• CC BY-NC: This license allows reusers to distribute, remix, 
   adapt, and build upon the material in any medium or format for noncommercial purposes only, 
   and only so long as attribution is given to the creator. 
 
