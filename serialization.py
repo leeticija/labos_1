@@ -68,6 +68,7 @@ def getFilledJson(order_data, insects):
 full_list = []
 FILE = "insects.db"
 pp = pprint.PrettyPrinter(indent=4)
+
 try:
   conn = sqlite3.connect(FILE)
   print("Connected to database!")
@@ -92,3 +93,39 @@ with open("insects.json", "w") as outfile:
   full_json = {}
   full_json["database"] = full_list
   outfile.write(json.dumps(full_json, indent=4))
+
+def getInsectCsv(insect_json):
+  fields = ['id', 'genus', 'specie', 'binomial_name', 'order_id']
+  row = []
+  row.append(insect_json["id"])
+  row.append(insect_json["genus"])
+  row.append(insect_json["specie"])
+  row.append(insect_json["binomial_name"])
+  row.append(insect_json["order_id"])
+  return row
+
+def getCsvRows(order_json):
+  fixed_row = [
+    order_json['id'],
+    order_json['order_name'],
+    order_json['common_name'],
+    order_json['wings'],
+    order_json['total_species'],
+    order_json['total_families'],
+    order_json['metamorphosis'],
+  ]
+  rows = []
+  for insect in order_json["examples"]:
+    my_row = fixed_row
+    my_row.extend(getInsectCsv(insect))
+    rows.append(my_row)
+  return rows
+
+# fields in csv file
+fields = ['order_id','order_name', 'common_name', 'wings', 'total_species', 'total_families', 'metamorphosis', 'insect_id', 'genus', 'specie', 'binomial_name', 'order_id'] 
+
+with open("insects.csv", "w") as csvfile:
+  csvwriter = csv.writer(csvfile)
+  csvwriter.writerow(fields)
+  for order in full_list:
+    csvwriter.writerows(getCsvRows(order))
