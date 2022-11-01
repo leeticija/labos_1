@@ -7,11 +7,11 @@ Zadatak iz 1. labosa iz kolegija OR.
   and only so long as attribution is given to the creator. 
 
 ## About:<br />
-• All data in database is stored in english.
-• version: 1.0
-• Created by: Leticija Crnković
-• There are 2 tables in the database:
-  • Orders
-    attributes: name, common_name, wings, total_species, total_families, metamorphosis
-  • Insects
-    attributes: genus, specie, binomial_name, order_id(which order does the insect belong to)
+• All data in database is stored in english.<br />
+• version: 1.0<br />
+• Created by: Leticija Crnković<br />
+• There are 2 tables in the database:<br />
+  • Orders<br />
+    attributes: name, common_name, wings, total_species, total_families, metamorphosis<br />
+  • Insects<br />
+    attributes: genus, specie, binomial_name, order_id(which order does the insect belong to)<br />
